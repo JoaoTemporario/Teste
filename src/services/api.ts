@@ -34,6 +34,12 @@ const getMockWorkerData = (cpf: string): WorkerData => {
       cpf: cpf,
       queryStatus: 'success',
       lastUpdated: new Date().toISOString(),
+      birthDate: '1985-03-15',
+      motherName: 'Ana Maria Silva',
+      nis: '12345678901',
+      birthState: 'SP',
+      birthCity: 'São Paulo',
+      isPoliticallyExposed: false
     },
     employments: [
       {
@@ -43,6 +49,10 @@ const getMockWorkerData = (cpf: string): WorkerData => {
         hireDate: '2020-03-15',
         baseSalary: 4800,
         isAuthorized: true,
+        employerDocument: '12.345.678/0001-90',
+        employerRegistrationType: 'cnpj',
+        employerRegistrationCode: '12345678000190',
+        contractType: 'CLT'
       },
       {
         employerName: 'Indústrias XYZ S.A.',
@@ -51,6 +61,10 @@ const getMockWorkerData = (cpf: string): WorkerData => {
         hireDate: '2018-06-10',
         baseSalary: 3500,
         isAuthorized: false,
+        employerDocument: '98.765.432/0001-10',
+        employerRegistrationType: 'cnpj',
+        employerRegistrationCode: '98765432000110',
+        contractType: 'CLT'
       }
     ],
     financialInfo: {
@@ -61,7 +75,17 @@ const getMockWorkerData = (cpf: string): WorkerData => {
       remainingInstallments: 36,
       totalInstallments: 48,
       nextInstallmentAmount: 320,
-      nextInstallmentDate: '2024-04-10'
+      nextInstallmentDate: '2024-04-10',
+      totalEarnings: 4800,
+      marginBase: 2400,
+      activeLoans: 1,
+      suspendedLoans: 0,
+      legacyLoans: []
+    },
+    alerts: {
+      leaves: [],
+      notices: [],
+      terminations: []
     }
   };
 };
@@ -73,6 +97,12 @@ const getEmptyWorkerData = (cpf: string): WorkerData => {
       cpf: cpf,
       queryStatus: 'partial',
       lastUpdated: new Date().toISOString(),
+      birthDate: '1990-01-01',
+      motherName: 'Maria Exemplo',
+      nis: '98765432109',
+      birthState: 'RJ',
+      birthCity: 'Rio de Janeiro',
+      isPoliticallyExposed: false
     },
     employments: [],
     financialInfo: {
@@ -83,7 +113,17 @@ const getEmptyWorkerData = (cpf: string): WorkerData => {
       remainingInstallments: 0,
       totalInstallments: 0,
       nextInstallmentAmount: 0,
-      nextInstallmentDate: ''
+      nextInstallmentDate: '',
+      totalEarnings: 0,
+      marginBase: 0,
+      activeLoans: 0,
+      suspendedLoans: 0,
+      legacyLoans: []
+    },
+    alerts: {
+      leaves: [],
+      notices: [],
+      terminations: []
     }
   };
 };
