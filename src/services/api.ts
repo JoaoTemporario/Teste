@@ -42,30 +42,60 @@ const getMockWorkerData = (cpf: string): WorkerData => {
       isPoliticallyExposed: false
     },
     employments: [
+
+ {
+    employerName: 'Empresa ABC Ltda',
+    registrationId: '123456',
+    status: 'active',
+    hireDate: '2020-03-15',
+    baseSalary: 4800,
+    isAuthorized: true,
+    employerDocument: '12.345.678/0001-90',
+    employerRegistrationType: 'cnpj',
+    employerRegistrationCode: '12345678000190',
+    contractType: 'CLT',
+    employerStartDate: '2015-05-20',
+    ineligibilityReason: 'Sem remuneração na última competência',
+    terminationDate: '2024-10-02',
+    terminationReason: 'Dispensa sem justa causa',
+    terminationCode: '2',
+    leaves: [
       {
-        employerName: 'Empresa ABC Ltda',
-        registrationId: '123456',
-        status: 'active',
-        hireDate: '2020-03-15',
-        baseSalary: 4800,
-        isAuthorized: true,
-        employerDocument: '12.345.678/0001-90',
-        employerRegistrationType: 'cnpj',
-        employerRegistrationCode: '12345678000190',
-        contractType: 'CLT'
+        startDate: '2025-02-10',
+        endDate: '2025-03-15',
+        reason: '3',
+        description: 'Afastamento por motivo de doença',
       },
+    ],
+    notices: [
       {
-        employerName: 'Indústrias XYZ S.A.',
-        registrationId: '789012',
-        status: 'inactive',
-        hireDate: '2018-06-10',
-        baseSalary: 3500,
-        isAuthorized: false,
-        employerDocument: '98.765.432/0001-10',
-        employerRegistrationType: 'cnpj',
-        employerRegistrationCode: '98765432000110',
-        contractType: 'CLT'
-      }
+        startDate: '2024-09-01',
+        endDate: '2024-10-01',
+        reason: '1',
+        description: 'Aviso prévio trabalhado - Pedido de demissão',
+      },
+    ],
+  },
+  {
+    employerName: 'Indústrias XYZ S.A.',
+    registrationId: '789012',
+    status: 'terminated',
+    hireDate: '2018-06-10',
+    baseSalary: 3500,
+    isAuthorized: false,
+    employerDocument: '98.765.432/0001-10',
+    employerRegistrationType: 'cnpj',
+    employerRegistrationCode: '98765432000110',
+    contractType: 'CLT',
+    employerStartDate: '2010-08-15',
+    ineligibilityReason: 'Vínculo com data de desligamento',
+    terminationDate: '2024-01-11',
+    terminationReason: 'Pedido de demissão',
+    terminationCode: '1',
+    leaves: [],
+    notices: [],
+  }
+      
     ],
     financialInfo: {
       availableMargin: 1440,
