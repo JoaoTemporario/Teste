@@ -97,6 +97,17 @@ const EmploymentsCard: React.FC<EmploymentsCardProps> = ({ employments }) => {
                 </div>
 
                 <div>
+                  <p className="text-sm text-gray-400 mb-1">Código de Inscrição do Empregador</p>
+                  <div className="flex items-center gap-2">
+                    <p className="text-gray-300">
+                      {employment.employerRegistrationType.toUpperCase()} - {employment.employerRegistrationCode}
+                    </p>
+                    <CopyButton value={employment.employerRegistrationCode} tooltip="Copiar código" />
+                  </div>
+                </div>
+
+
+                <div>
                   <p className="text-sm text-gray-400 mb-1">Tipo de Contrato</p>
                   <p className="text-gray-300">{employment.contractType}</p>
                 </div>
@@ -108,7 +119,12 @@ const EmploymentsCard: React.FC<EmploymentsCardProps> = ({ employments }) => {
                   </p>
                   <p className="text-gray-300">{formatDate(employment.hireDate)}</p>
                 </div>
-                
+
+                <div>
+                  <p className="text-sm text-gray-400 mb-1">Início da atividade do empregador</p>
+                  <p className="text-gray-300">{formatDate(employment.employerStartDate)}</p>
+                </div>
+
                 <div>
                   <p className="text-sm text-gray-400 mb-1 flex items-center gap-2">
                     <CreditCard size={14} />
