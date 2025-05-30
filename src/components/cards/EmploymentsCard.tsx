@@ -147,35 +147,38 @@ const EmploymentsCard: React.FC<EmploymentsCardProps> = ({ employments }) => {
                 )}
               </div>
 
-              {(employment.leaveInfo || employment.noticeInfo) && (
+              {(employment.leaves.length > 0 || employment.notices.length > 0) && (
                 <div className="mt-4 pt-4 border-t border-gray-700">
-                  {employment.leaveInfo && (
-                    <div className="flex items-start gap-2 text-sm">
+                  
+                  {employment.leaves.map((leave, idx) => (
+                    <div key={`leave-${idx}`} className="flex items-start gap-2 text-sm">
                       <AlertTriangle size={16} className="text-amber-400 mt-1" />
                       <div>
                         <span className="text-amber-400">Afastamento: </span>
-                        <span className="text-gray-300">{employment.leaveInfo.reason}</span>
+                        <span className="text-gray-300">{leave.description}</span>
                         <p className="text-gray-400 mt-1">
-                          {formatDate(employment.leaveInfo.startDate)} até {formatDate(employment.leaveInfo.endDate)}
+                          {formatDate(leave.startDate)} até {formatDate(leave.endDate)}
                         </p>
                       </div>
                     </div>
-                  )}
-                  
-                  {employment.noticeInfo && (
-                    <div className="flex items-start gap-2 text-sm mt-3">
+                  ))}
+              
+                  {employment.notices.map((notice, idx) => (
+                    <div key={`notice-${idx}`} className="flex items-start gap-2 text-sm mt-3">
                       <AlertTriangle size={16} className="text-orange-400 mt-1" />
                       <div>
                         <span className="text-orange-400">Aviso Prévio: </span>
-                        <span className="text-gray-300">{employment.noticeInfo.reason}</span>
+                        <span className="text-gray-300">{notice.description}</span>
                         <p className="text-gray-400 mt-1">
-                          {formatDate(employment.noticeInfo.startDate)} até {formatDate(employment.noticeInfo.endDate)}
+                          {formatDate(notice.startDate)} até {formatDate(notice.endDate)}
                         </p>
                       </div>
                     </div>
-                  )}
+                  ))}
+                  
                 </div>
               )}
+
             </div>
           );
         })}
