@@ -121,9 +121,7 @@ const getEmptyWorkerData = (cpf: string): WorkerData => {
       legacyLoans: []
     },
     alerts: {
-
-
-  leaves: [
+      leaves: [
     {
       startDate: "2025-02-10",
       endDate: "2025-03-15",
@@ -137,7 +135,7 @@ const getEmptyWorkerData = (cpf: string): WorkerData => {
       description: "Licença maternidade",
     },
   ],
-  notices: [
+      notices: [
     {
       startDate: "2024-09-01",
       endDate: "2024-10-01",
@@ -151,7 +149,7 @@ const getEmptyWorkerData = (cpf: string): WorkerData => {
       description: "Aviso prévio indenizado - Dispensa sem justa causa",
     },
   ],
-  terminations: [
+      terminations: [
     {
       date: "2024-10-02",
       reason: "1",
@@ -161,10 +159,6 @@ const getEmptyWorkerData = (cpf: string): WorkerData => {
       reason: "2",
     },
   ],
-
-
-
-      
     }
   };
 };
