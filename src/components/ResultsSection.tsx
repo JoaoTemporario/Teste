@@ -3,6 +3,7 @@ import { WorkerData } from '../types/workerData';
 import PersonalInfoCard from './cards/PersonalInfoCard';
 import EmploymentsCard from './cards/EmploymentsCard';
 import FinancialInfoCard from './cards/FinancialInfoCard';
+import AlertsCard from './cards/AlertsCard';
 import { useWorkerData } from '../context/WorkerDataContext';
 import ResultsSkeleton from './skeletons/ResultsSkeleton';
 
@@ -45,6 +46,7 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({ data }) => {
   return (
     <div className="mt-8 space-y-6 pb-10 animate-fadeIn">
       <PersonalInfoCard data={data.personalInfo} />
+      <AlertsCard alerts={data.alerts} />
       <EmploymentsCard employments={data.employments} />
       <FinancialInfoCard data={data.financialInfo} />
     </div>
